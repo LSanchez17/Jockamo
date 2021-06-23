@@ -7,28 +7,35 @@ const Nav = () => {
             <div>
                 <ul>
                     <li>
-                        <Link to='Home'></Link>
+                        <Link to='Home'>Home</Link>
                     </li>
                     <li>
-                        <Link to='Locations'></Link>
+                        <Link to='Locations'>Locations</Link>
                     </li>
                     <li>
-                        <Link to='Specials'></Link>
+                        <Link to='Specials'>Specials</Link>
                     </li>
                     <li>
-                        <Link to='Logo'></Link>
+                        <Link to='Logo'>About our Logo</Link>
                     </li>
                     <li>
-                        <Link to='Contact'></Link>
+                        <Link to='Contact'>Contact</Link>
                     </li>
                     <li>
-                        <Link to='Employees'></Link>
+                        <Link to='Employees'>Employees</Link>
                     </li>
                     <li>
-                        <Link to='Donations'></Link>
+                        <Link to='Donations'>Donations</Link>
                     </li>
                 </ul>
-            </div>
+                <Switch>
+                    {routes.map((route, i) => {
+                        <Route path={route.path} component={route.component} exact={route.exact} />
+                    })}
+                </Switch>
+            </div>  
         </Router>
     )
 }
+
+export default Nav;
